@@ -66,14 +66,14 @@ export default function ViewInvoice({ history, match }) {
       <Grid item sm={3} lg={3}>
         <div>
           <Button
-            color='primary'
+            color="primary"
             style={{ borderRadius: "20px" }}
-            variant='contained'
+            variant="contained"
             ref={anchorRef}
             aria-controls={open ? "menu-list-grow" : undefined}
-            aria-haspopup='true'
+            aria-haspopup="true"
             onClick={handleToggle}
-            size='large'
+            size="large"
           >
             More Actions <IconExpandMore />
           </Button>
@@ -94,14 +94,14 @@ export default function ViewInvoice({ history, match }) {
               >
                 <Paper className={classes.paper}>
                   <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList autoFocusItem={open} id='menu-list-grow'>
-                      <MenuItem onClick={handleClose}>
+                    <MenuList autoFocusItem={open} id="menu-list-grow">
+                      {/* <MenuItem onClick={handleClose}>
                         <ReactToPrint
                           trigger={() => <div>Print</div>}
                           content={() => componentRef.current}
                         />
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>Download PDF</MenuItem>
+                      </MenuItem> */}
+                      {/* <MenuItem onClick={handleClose}>Download PDF</MenuItem> */}
                       <MenuItem
                         onClick={() =>
                           history.push(`/invoice/${invoice_id}/edit`)
@@ -109,7 +109,7 @@ export default function ViewInvoice({ history, match }) {
                       >
                         Edit
                       </MenuItem>
-                      <MenuItem onClick={handleClose}>Delete</MenuItem>
+                      {/* <MenuItem onClick={handleClose}>Delete</MenuItem> */}
                     </MenuList>
                   </ClickAwayListener>
                 </Paper>
@@ -122,9 +122,9 @@ export default function ViewInvoice({ history, match }) {
         <Button
           fullWidth
           style={{ borderRadius: "20px" }}
-          size='large'
-          variant='contained'
-          color='primary'
+          size="large"
+          variant="contained"
+          color="primary"
           onClick={() => history.push("/invoice/add")}
         >
           Create New
@@ -174,9 +174,9 @@ export default function ViewInvoice({ history, match }) {
               border: "1px solid transparent",
             }}
           >
-            <Grid container justify='flex-start'>
-              <Grid container direction='column' xs={2}>
-                <Typography align='left' variant='body2'>
+            <Grid container justify="flex-start">
+              <Grid container direction="column" xs={2}>
+                <Typography align="left" variant="body2">
                   Status
                 </Typography>
                 <div
@@ -196,27 +196,27 @@ export default function ViewInvoice({ history, match }) {
                   {invoice.status}
                 </div>
               </Grid>
-              <Grid container direction='column' xs={6}>
-                <Typography align='left' variant='body2'>
+              <Grid container direction="column" xs={6}>
+                <Typography align="left" variant="body2">
                   Customer
                 </Typography>
-                <Typography align='left' variant='h6' color='primary'>
+                <Typography align="left" variant="h6" color="primary">
                   {invoice.customerName}
                 </Typography>
               </Grid>
-              <Grid container direction='column' xs={2}>
-                <Typography align='left' variant='body2'>
+              <Grid container direction="column" xs={2}>
+                <Typography align="left" variant="body2">
                   Total Bill
                 </Typography>
-                <Typography align='left' variant='h6' color='primary'>
+                <Typography align="left" variant="h6" color="primary">
                   TK {invoice.subTotal}
                 </Typography>
               </Grid>
-              <Grid container direction='column' xs={2}>
-                <Typography align='left' variant='body2'>
+              <Grid container direction="column" xs={2}>
+                <Typography align="left" variant="body2">
                   Amount Due
                 </Typography>
-                <Typography align='left' variant='h6' color='primary'>
+                <Typography align="left" variant="h6" color="primary">
                   TK {invoice.due}
                 </Typography>
               </Grid>
@@ -229,7 +229,7 @@ export default function ViewInvoice({ history, match }) {
             <Grid container className={classes.root}>
               <InvoiceCopy
                 ref={componentRef}
-                id='invoiceToPrint'
+                id="invoiceToPrint"
                 invoice={invoice}
               />
             </Grid>
@@ -242,8 +242,8 @@ export default function ViewInvoice({ history, match }) {
                 <ReactToPrint
                   trigger={() => (
                     <Button
-                      variant='contained'
-                      startIcon={<LocalPrintshopIcon color='primary' />}
+                      variant="contained"
+                      startIcon={<LocalPrintshopIcon color="primary" />}
                     >
                       Print
                     </Button>

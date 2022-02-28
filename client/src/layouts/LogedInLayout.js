@@ -27,16 +27,17 @@ const drawerWidth = 240;
 
 const switchRoutes = (
   <Switch>
-    <Route exact path='/dashboard' component={Dashboard} />
-    <Route exact path='/invoice' component={Invoices} />
-    <Route exact path='/invoice/:invoice_id/view' component={ViewInvoice} />
-    <Route exact path='/invoice/:invoice_id/edit' component={UpdateInvoice} />
-    <Route exact path='/estimate' component={Estimate} />
-    <Route exact path='/customers' component={Client} />
-    <Route exact path='/customer/add' component={AddClient} />
-    <Route exact path='/company-settings' component={CompanySettings} />
-    <Route exact path='/invoice/add' component={NewInvoice} />
-    <Route exact path='/invoice/pdf' component={PDF} />
+    <Route exact path="/" component={Invoices} />
+    <Route exact path="/dashboard" component={Dashboard} />
+    <Route exact path="/invoice" component={Invoices} />
+    <Route exact path="/invoice/:invoice_id/view" component={ViewInvoice} />
+    <Route exact path="/invoice/:invoice_id/edit" component={UpdateInvoice} />
+    <Route exact path="/estimate" component={Estimate} />
+    <Route exact path="/customers" component={Client} />
+    <Route exact path="/customer/add" component={AddClient} />
+    <Route exact path="/company-settings" component={CompanySettings} />
+    <Route exact path="/invoice/add" component={NewInvoice} />
+    <Route exact path="/invoice/pdf" component={PDF} />
   </Switch>
 );
 
@@ -130,31 +131,31 @@ export default function LogedInLayout(props) {
             handleDrawerToggle={handleDrawerToggle}
           />
           <nav className={classes.drawer}>
-            <Hidden smUp implementation='css'>
+            <Hidden smUp implementation="css">
               <Drawer
                 className={classes.drawer}
                 container={container}
                 onClose={handleDrawerToggle}
-                variant='temporary'
-                anchor='left'
+                variant="temporary"
+                anchor="left"
                 open={mobileOpen}
               >
                 <div className={classes.logo}>
-                  <img src='/logo.jpg' alt='logo' className={classes.img} />
+                  <img src="/logo.jpg" alt="logo" className={classes.img} />
                 </div>
                 <SideMenu />
               </Drawer>
             </Hidden>
-            <Hidden xsDown implementation='css'>
+            <Hidden xsDown implementation="css">
               <Drawer
                 className={classes.drawer}
                 onClose={handleDrawerToggle}
-                variant='permanent'
-                anchor='left'
+                variant="permanent"
+                anchor="left"
                 open
               >
                 <div className={classes.logo}>
-                  <img src='/logo.png' alt='logo' className={classes.img} />
+                  <img src="/logo.png" alt="logo" className={classes.img} />
                 </div>
                 <SideMenu />
               </Drawer>
