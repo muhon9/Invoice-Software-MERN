@@ -1,2 +1,9 @@
-# Invoice-Software---MERN
-This is a practice project to learn advance Reactjs, ExpressJS. I started this project before 1 years and faced some problems. So i paused and gatherd some more knowledge. These project was in my computer. I am going to start it again and try to refactor it in the best way.
+<h1 align="center">Invoicing Software</h1>
+
+## 🎯 About
+
+I have started this project before 2 years with the purpose of learning how to structure a full stack application wiht React and Expressjs<br/>
+
+For lack of clear concept i paused it after implementing some features. In the next few months i have tried to clear my basic concepts. Now it will be a great time to start the project again and try to implement what i have learned in past few months. <br/>
+
+I will update and push the codes regularly. Hope it will be a greate jurney<br/>
