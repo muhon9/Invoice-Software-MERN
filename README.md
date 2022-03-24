@@ -2,7 +2,7 @@
 
 ## 🎯 About
 
-I have started this project before 2 years with the purpose of learning how to structure a full stack application wiht React and Expressjs<br/>
+I have started this project 1 year ago with the purpose of learning how to structure a full stack application with React and Expressjs<br/>
 
 For lack of clear concept i paused it after implementing some features. In the next few months i have tried to clear my basic concepts. Now it will be a great time to start the project again and try to implement what i have learned in past few months. <br/>
 
@@ -38,12 +38,10 @@ I will update and push the codes regularly. Hope it will be a greate jurney<br/>
 ## 📸 Screenshots
 
 **Sign In**
-![Screenshot of Fakeflix Sign In](https://cdn.jsdelivr.net/gh/Th3Wall/assets-cdn/Fakeflix/screenshots/Fakeflix_SignIn.jpg)
-<br/>
+
 
 **Sign Up**
-![Screenshot of Fakeflix Sign Up](https://cdn.jsdelivr.net/gh/Th3Wall/assets-cdn/Fakeflix/screenshots/Fakeflix_SignUp.jpg)
-<br/>
+
 
 
 
