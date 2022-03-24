@@ -6,7 +6,7 @@ I have started this project 1 year ago with the purpose of learning how to struc
 
 For lack of clear concept i paused it after implementing some features. In the next few months i have tried to clear my basic concepts. Now it will be a great time to start the project again and try to implement what i have learned in past few months. <br/>
 
-I will update and push the codes regularly. Hope it will be a greate jurney<br/>
+I will update and push the codes regularly. Hope it will be a greate journey<br/>
 
 ## :rocket: Technologies
 
