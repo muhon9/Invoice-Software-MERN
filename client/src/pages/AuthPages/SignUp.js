@@ -18,9 +18,9 @@ import { registrationAction, logOut } from "../../actions/userActions";
 
 function Copyright() {
   return (
-    <Typography variant='body2' color='textSecondary' align='center'>
+    <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color='inherit' href='https://material-ui.com/'>
+      <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>{" "}
       {new Date().getFullYear()}
@@ -75,89 +75,89 @@ export default function SignUp({ location, history }) {
   };
 
   return (
-    <Container component='main' maxWidth='xs'>
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component='h1' variant='h5'>
+        <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        {error && <Alert severity='error'>{error}</Alert>}
+        {error && <Alert severity="error">{error}</Alert>}
         <form className={classes.form} onSubmit={(e) => handleSubmit(e)}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
-                autoComplete='fname'
-                name='firstName'
-                variant='outlined'
+                autoComplete="fname"
+                name="firstName"
+                variant="outlined"
                 required
                 fullWidth
-                id='firstName'
-                label='First Name'
+                id="firstName"
+                label="First Name"
                 onChange={(e) => setFname(e.target.value)}
                 autoFocus
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                variant='outlined'
+                variant="outlined"
                 required
                 fullWidth
-                id='lastName'
-                label='Last Name'
-                name='lastName'
+                id="lastName"
+                label="Last Name"
+                name="lastName"
                 onChange={(e) => setLname(e.target.value)}
-                autoComplete='lname'
+                autoComplete="lname"
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                variant='outlined'
+                variant="outlined"
                 required
                 fullWidth
-                id='email'
-                label='Email Address'
-                name='email'
-                autoComplete='email'
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                variant='outlined'
+                variant="outlined"
                 required
                 fullWidth
-                name='password'
-                label='Password'
-                type='password'
-                id='password'
-                autoComplete='current-password'
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value='allowExtraEmails' color='primary' />}
                 label='I want to receive inspiration, marketing promotions and updates via email.'
               />
-            </Grid>
+            </Grid> */}
           </Grid>
           <Button
-            type='submit'
+            type="submit"
             fullWidth
-            variant='contained'
-            color='primary'
+            variant="contained"
+            color="primary"
             className={classes.submit}
           >
             Sign Up
           </Button>
-          <Grid container justify='flex-end'>
+          <Grid container justify="flex-end">
             <Grid item>
               <Link
                 to={redirect ? `/login?redirect=${redirect}` : "/login"}
-                variant='body2'
+                variant="body2"
               >
                 Already have an account? Sign in
               </Link>
@@ -165,9 +165,9 @@ export default function SignUp({ location, history }) {
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
+      {/* <Box mt={5}>
         <Copyright />
-      </Box>
+      </Box> */}
     </Container>
   );
 }

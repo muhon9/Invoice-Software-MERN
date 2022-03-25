@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 export default function Estimate() {
   return (
-    <div>
-      Thisis Estimate page
-    </div>
-  )
+    <div>In this page i will place a form to give estimation to client.</div>
+  );
 }

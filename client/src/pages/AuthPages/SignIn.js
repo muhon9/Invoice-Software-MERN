@@ -20,9 +20,9 @@ import { loginAction } from "../../actions/userActions";
 
 function Copyright() {
   return (
-    <Typography variant='body2' color='textSecondary' align='center'>
+    <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color='inherit' href='https://material-ui.com/'>
+      <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>{" "}
       {new Date().getFullYear()}
@@ -75,16 +75,16 @@ export default function SignIn({ location, history }) {
   };
 
   return (
-    <Container component='main' maxWidth='xs'>
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component='h1' variant='h5'>
+        <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        {error && <Alert severity='error'>{error}</Alert>}
+        {error && <Alert severity="error">{error}</Alert>}
         {loading && <div>Loading....</div>}
         <form
           className={classes.form}
@@ -92,40 +92,40 @@ export default function SignIn({ location, history }) {
           noValidate
         >
           <TextField
-            variant='outlined'
-            margin='normal'
+            variant="outlined"
+            margin="normal"
             required
             fullWidth
-            id='email'
-            label='Email Address'
-            name='email'
-            autoComplete='email'
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             autoFocus
           />
           <TextField
-            variant='outlined'
-            margin='normal'
+            variant="outlined"
+            margin="normal"
             required
             fullWidth
-            name='password'
-            label='Password'
-            type='password'
-            id='password'
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            autoComplete='current-password'
+            autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value='remember' color='primary' />}
-            label='Remember me'
-          />
+          {/* <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          /> */}
           <Button
-            type='submit'
+            type="submit"
             fullWidth
-            variant='contained'
-            color='primary'
+            variant="contained"
+            color="primary"
             className={classes.submit}
             disable={loading}
           >
@@ -133,12 +133,12 @@ export default function SignIn({ location, history }) {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link variant='body2'>Forgot password?</Link>
+              <Link variant="body2">Forgot password?</Link>
             </Grid>
             <Grid item>
               <Link
                 to={redirect ? `/signup?redirect=${redirect}` : "/signup"}
-                variant='body2'
+                variant="body2"
               >
                 {"Don't have an account? Sign Up"}
               </Link>
@@ -146,9 +146,6 @@ export default function SignIn({ location, history }) {
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }

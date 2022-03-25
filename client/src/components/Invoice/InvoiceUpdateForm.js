@@ -17,6 +17,7 @@ import { queryClients } from "../../functions/clientFunctions";
 import FormNewCustomerDialog from "./FormNewCustomerDialog";
 import { Alert } from "@material-ui/lab";
 import { updateInvoice } from "../../functions/invoiceFunctions";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -33,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function InvoiceUpdateForm({ oldInvoice }) {
+  const history = useHistory();
+
   //Default Invoice date
   var date = new Date(); // this is today date
   const dateformated = dayjs(date).format("YYYY-MM-DD"); // formated version for setting default
@@ -112,6 +115,7 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
       subTotal,
     }).then((res) => {
       console.log("Invoice Updated", res.data);
+      history.push("/invoice");
     });
   };
 
@@ -252,15 +256,15 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
   };
 
   return (
-    <Paper variant='elevation' elevation={4} style={{ padding: "50px" }}>
+    <Paper variant="elevation" elevation={4} style={{ padding: "50px" }}>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={1}>
           <Grid container xs={12} sm={6} spacing={3}>
             <Grid item xs={12}>
               <Autocomplete
-                size='small'
+                size="small"
                 fullWidth
-                id='combo-box-demo'
+                id="combo-box-demo"
                 value={invoice.customerName}
                 onChange={handleCustomerChange}
                 filterOptions={(options, params) => {
@@ -293,8 +297,8 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label='Customer Name'
-                    variant='outlined'
+                    label="Customer Name"
+                    variant="outlined"
                   />
                 )}
               />
@@ -303,13 +307,13 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
               <TextField
                 autoFocus
                 fullWidth
-                size='small'
-                variant='outlined'
+                size="small"
+                variant="outlined"
                 required
-                label='Customer Number'
+                label="Customer Number"
                 value={invoice.customerNumber}
-                type='text'
-                name='customerNumber'
+                type="text"
+                name="customerNumber"
                 onChange={handleInvoiceChange}
                 InputLabelProps={{ shrink: true }}
               />
@@ -317,12 +321,12 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                size='small'
-                label='Address'
-                variant='outlined'
-                type='text'
-                className='form-control form-control-sm'
-                name='customerAddress'
+                size="small"
+                label="Address"
+                variant="outlined"
+                type="text"
+                className="form-control form-control-sm"
+                name="customerAddress"
                 value={invoice.customerAddress}
                 onChange={handleInvoiceChange}
                 required
@@ -336,13 +340,13 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
               <TextField
                 disabled
                 style={{ float: "right" }}
-                size='small'
-                label='Invoice No'
-                variant='outlined'
-                type='text'
-                id='invoiceNumber'
-                className='form-control form-control'
-                name='invoiceNumber'
+                size="small"
+                label="Invoice No"
+                variant="outlined"
+                type="text"
+                id="invoiceNumber"
+                className="form-control form-control"
+                name="invoiceNumber"
                 value={invoiceNumber}
                 InputLabelProps={{ shrink: true }}
               />
@@ -351,13 +355,13 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
             <Grid item xs={12}>
               <TextField
                 style={{ float: "right" }}
-                size='small'
-                label='Invoice Date'
-                variant='outlined'
-                id='invoiceDate'
-                type='date'
-                className='form-control form-control'
-                name='invoiceDate'
+                size="small"
+                label="Invoice Date"
+                variant="outlined"
+                id="invoiceDate"
+                type="date"
+                className="form-control form-control"
+                name="invoiceDate"
                 value={dayjs(Date(invoiceDate)).format("YYYY-MM-DD")}
                 onChange={handleInvoiceChange}
                 InputLabelProps={{ shrink: true }}
@@ -367,13 +371,13 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
             <Grid item xs={12}>
               <TextField
                 style={{ float: "right" }}
-                size='small'
-                label='Due Date'
-                variant='outlined'
-                id='dueDate'
-                type='date'
-                className='form-control form-control'
-                name='dueDate'
+                size="small"
+                label="Due Date"
+                variant="outlined"
+                id="dueDate"
+                type="date"
+                className="form-control form-control"
+                name="dueDate"
                 defaultValue={dayjs(Date(dueDate)).format("YYYY-MM-DD")}
                 value={dayjs(Date(dueDate)).format("YYYY-MM-DD")}
                 onChange={handleInvoiceChange}
@@ -398,55 +402,55 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
         <Grid container>
           <Grid item xs={12} sm={3} lg={3}>
             <TextField
-              label='Note'
-              variant='outlined'
+              label="Note"
+              variant="outlined"
               multiline
               rows={1}
-              id='note'
-              type='text'
-              className='form-control'
-              name='note'
+              id="note"
+              type="text"
+              className="form-control"
+              name="note"
               value={note}
               onChange={handleInvoiceChange}
             />
           </Grid>
-          <Grid container direction='column' xs={12} sm={8} lg={8}>
+          <Grid container direction="column" xs={12} sm={8} lg={8}>
             <Grid item style={{ display: "flex", justifyContent: "flex-end" }}>
-              <Typography variant='h6' color='primary'>
+              <Typography variant="h6" color="primary">
                 Sub Total :${subTotal}
               </Typography>
             </Grid>
             <Grid item style={{ marginTop: "13px" }}>
-              <Typography style={{ float: "right" }} variant='h6'>
+              <Typography style={{ float: "right" }} variant="h6">
                 Discount :{`   `}{" "}
                 <TextField
                   style={{ textAlign: "end", maxWidth: "150px" }}
-                  variant='outlined'
-                  size='small'
+                  variant="outlined"
+                  size="small"
                   multiline
                   rows={1}
-                  id='discount'
-                  type='number'
-                  className='form-control'
-                  name='discount'
+                  id="discount"
+                  type="number"
+                  className="form-control"
+                  name="discount"
                   value={discount}
                   onChange={handleInvoiceChange}
                 />
               </Typography>
             </Grid>
             <Grid item style={{ marginTop: "13px" }}>
-              <Typography style={{ float: "right" }} variant='h6'>
+              <Typography style={{ float: "right" }} variant="h6">
                 Paid :{`   `}{" "}
                 <TextField
                   style={{ textAlign: "end", maxWidth: "150px" }}
-                  variant='outlined'
-                  size='small'
+                  variant="outlined"
+                  size="small"
                   multiline
                   rows={1}
-                  id='paid'
-                  type='number'
-                  className='form-control'
-                  name='paid'
+                  id="paid"
+                  type="number"
+                  className="form-control"
+                  name="paid"
                   value={paid}
                   onChange={handleInvoiceChange}
                 />
@@ -458,27 +462,27 @@ export default function InvoiceUpdateForm({ oldInvoice }) {
         <br />
         {error && (
           <Alert
-            variant='standard'
-            color='error'
-            size='small'
+            variant="standard"
+            color="error"
+            size="small"
             style={{ margin: "5px" }}
           >
             {error}
           </Alert>
         )}
-        <Grid container spacing={3} justify='flex-end'>
+        <Grid container spacing={3} justify="flex-end">
           <Grid item>
-            <Button size='large' variant='outlined' color='primary'>
+            <Button size="large" variant="outlined" color="primary">
               Preview
             </Button>
           </Grid>
           <Grid item>
             <Button
-              size='large'
-              variant='contained'
-              color='primary'
+              size="large"
+              variant="contained"
+              color="primary"
               onClick={(e) => handleSubmit}
-              type='submit'
+              type="submit"
             >
               Save And Continue
             </Button>
